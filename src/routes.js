@@ -26,9 +26,14 @@ export const routes = [
 
                     return res.writeHead(201).end();
                 case 'multipart/form-data':
-                    // Exemplo: https://efficient-sloth-d85.notion.site/Cria-o-via-CSV-com-Stream-21ba6d279991473792787d9265212181
+                    // Exemplo: https://efficient-sloth-d85.notion.site/Cria-o-via-CSV-com-Stream-21ba6d279991473792787d9265212181gi
                     // Exempo: https://github.com/rocketseat-education/ignite-nodejs-01-fundamentos-nodejs/blob/main/streams/stream-http-server.js
                     // Ler via transformação
+
+                    for await (const chunk of req) {
+                        // Process each chunk
+                        console.log(chunk);
+                    }
 
                     return res.writeHead(201).end();
                 default:
